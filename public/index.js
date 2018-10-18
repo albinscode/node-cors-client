@@ -30,6 +30,8 @@ $(function(){
       $.ajax({
         url: url,
         method: method,
+        // this is to force a preflight request (DEL is by default a preflight, but not PUT, GET, etc...)
+        contentType: "application/json",
         success: function(data, state, res){
           $button.removeAttr('disabled');
           $result.css('border-color', 'black');
